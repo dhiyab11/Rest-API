@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Light Theme Design Tokens: White/light bg, soft light green cards, dark green buttons, dark text, green accents */
+    --color-bg-main: #f8fafc;
+    --color-bg-card: #ffffff;
+    --color-bg-card-subtle: #f0fdf4;
+    --color-bg-nav: #ffffff;
+    --color-bg-sidebar: #f6fcf8;
+    --color-border: #d1fae5;
+    --color-border-accent: #10b981;
+    --color-text-primary: #064e3b;
+    --color-text-secondary: #047857;
+    --color-text-muted: #065f46;
+    --color-primary: #10b981;
+    --color-btn-dark: #064e3b;
+    --color-btn-dark-hover: #022c22;
+    --color-btn-text: #ffffff;
+  }
+
+  .dark {
+    /* Dark Theme Design Tokens: Near-black bg, very dark green cards, dark green nav/sidebar, bright green accent, white/light text */
+    --color-bg-main: #040806;
+    --color-bg-card: #08150d;
+    --color-bg-card-subtle: #0d1e14;
+    --color-bg-nav: #051009;
+    --color-bg-sidebar: #051009;
+    --color-border: #133320;
+    --color-border-accent: #22c55e;
+    --color-text-primary: #f0fdf4;
+    --color-text-secondary: #86efac;
+    --color-text-muted: #6ee7b7;
+    --color-primary: #22c55e;
+    --color-btn-dark: #15803d;
+    --color-btn-dark-hover: #16a34a;
+    --color-btn-text: #ffffff;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.45);
+}
+
+/* Custom animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

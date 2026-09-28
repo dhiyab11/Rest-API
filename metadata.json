@@ -1,0 +1,6 @@
+{
+  "name": "SmartCampus API Hub",
+  "description": "Centralized campus operations management platform built entirely on REST APIs with role-based dashboards and interactive API explorer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
